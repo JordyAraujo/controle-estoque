@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 class MateriaisController extends Controller
 {
     public function index(Request $request) {
-        $materiais = Material::all();
+        $materiais = Material::query()->orderBy('nome')->get();
         return view('materiais.index', compact('materiais'));
     }
 

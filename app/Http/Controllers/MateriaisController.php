@@ -2,16 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Material;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class MateriaisController extends Controller
 {
     public function index(Request $request) {
-        $materiais = [
-            'Avental',
-            'Luva',
-            'Máscara'
-        ];
+        $materiais = Material::all();
         return view('materiais.index', compact('materiais'));
     }
 
@@ -19,8 +17,10 @@ class MateriaisController extends Controller
     {
         return view('materiais.create');
     }
+
+    public function store(Request $request)
+    {
+        Material::create($request->all());
+        return redirect('/materiais');
+    }
 };
-
-
-
-

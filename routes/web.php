@@ -9,3 +9,4 @@ Route::get('/', function () {
 
 Route::get('/materiais', [MateriaisController::class, 'index']);
 Route::get('/materiais/criar', [MateriaisController::class, 'create']);
+Route::post('/materiais/criar', [MateriaisController::class, 'store']);

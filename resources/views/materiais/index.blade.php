@@ -9,7 +9,7 @@
     <ul class="list-group">
         @foreach ($materiais as $material)
             <li class="list-group-item">
-                {{ $material }}
+                {{ $material->nome }}
             </li>
         @endforeach
     </ul>

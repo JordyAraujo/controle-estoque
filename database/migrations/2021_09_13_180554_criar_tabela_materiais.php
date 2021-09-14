@@ -10,7 +10,7 @@ class CriarTabelaMateriais extends Migration
     {
         // Cria a tabela 'materiais'
         Schema::create('materiais', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('nome');
         });
     }
